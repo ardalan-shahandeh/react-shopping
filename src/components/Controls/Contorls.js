@@ -14,7 +14,7 @@ const products = [
 const Controls = (props) => {
   return (
     <div className="controls">
-      <div>
+      <div className="price">
         <p>Total Price: {props.price}</p>
       </div>
 
@@ -25,9 +25,12 @@ const Controls = (props) => {
             title={item.title}
             add={() => props.productAdd(item.type)}
             remove={() => props.productRemove(item.type)}
+          
           />
         );
       })}
+
+      <button className="order-btn" onClick={props.order}>Order</button>
     </div>
   );
 };
